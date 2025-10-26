@@ -12,7 +12,6 @@ import streamlit as st
 import base64
 import random
 import re
-from pydub import AudioSegment
 from openai import OpenAI
 from dotenv import load_dotenv
 from docx import Document
