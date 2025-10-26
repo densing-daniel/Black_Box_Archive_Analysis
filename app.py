@@ -1,12 +1,6 @@
 import sys
 import os
 
-# --- CRITICAL FIX: DISABLE CREWAI EMBEDDINGS ---
-os.environ['CREWAI_NO_EMBEDDINGS'] = '1'
-os.environ['LANGCHAIN_TRACING_V2'] = 'false'
-os.environ['OPENAI_API_KEY'] = 'dummy-key'
-# ---------------------------------------------------------------------------------
-
 try:
     __import__('pysqlite3')
     sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
