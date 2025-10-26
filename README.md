@@ -1,87 +1,109 @@
-Advanced AI-powered aviation incident analysis using Groq's LLM technology
-Features • Installation • Usage • Configuration • License
+# Black Box Archive Analysis
 
-📖 Description
+<div align="center">
+
+**Advanced AI-powered aviation incident analysis using Groq's LLM technology**
+
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Configuration](#-configuration) • [License](#-license)
+
+</div>
+
+## 📖 Description
+
 Black Box Archive Analysis is an intelligent aviation safety analysis system that processes black box recordings and Air Traffic Control (ATC) communications to generate comprehensive incident investigation reports. Powered by Groq's state-of-the-art AI models (Whisper-large-v3 for transcription and Llama-3.1-8b for analysis), this tool helps aviation professionals, safety investigators, and researchers quickly analyze and document flight incidents.
-🎯 Key Capabilities
 
-Audio Transcription: Converts MP3 audio recordings into accurate text using Groq's Whisper-large-v3 model
-Content Validation: Automatically detects aviation-related content to ensure relevant analysis
-Intelligent Report Generation: Creates structured incident reports with key details, safety concerns, and recommendations
-Interactive Chat Assistant: Ask questions about the generated report using natural language
-Professional Export: Download reports in DOCX format for official documentation
+### 🎯 Key Capabilities
 
+- **Audio Transcription**: Converts MP3 audio recordings into accurate text using Groq's Whisper-large-v3 model
+- **Content Validation**: Automatically detects aviation-related content to ensure relevant analysis
+- **Intelligent Report Generation**: Creates structured incident reports with key details, safety concerns, and recommendations
+- **Interactive Chat Assistant**: Ask questions about the generated report using natural language
+- **Professional Export**: Download reports in DOCX format for official documentation
 
-✨ Features
-🎙️ Audio Processing
+---
 
-Support for MP3 audio files
-Real-time audio preview
-High-accuracy transcription using Groq Whisper-large-v3
-Aviation content detection and validation
+## ✨ Features
 
-📋 Report Generation
+### 🎙️ Audio Processing
+- Support for MP3 audio files
+- Real-time audio preview
+- High-accuracy transcription using Groq Whisper-large-v3
+- Aviation content detection and validation
 
-Structured incident reports with:
+### 📋 Report Generation
+- Structured incident reports with:
+  - General information (date, aircraft, location, incident type)
+  - Key event details
+  - Safety concerns identification
+  - Actionable recommendations
+- Clean, professional formatting
+- Markdown and DOCX export options
 
-General information (date, aircraft, location, incident type)
-Key event details
-Safety concerns identification
-Actionable recommendations
+### 💬 AI Assistant
+- Context-aware question answering
+- Report-specific queries
+- Concise, accurate responses
+- User-friendly chat interface
 
+### 🎨 User Interface
+- Modern, responsive design
+- Three-column layout for optimal workflow
+- Real-time processing indicators
+- Professional aviation-themed styling
 
-Clean, professional formatting
-Markdown and DOCX export options
+---
 
-💬 AI Assistant
+## 🚀 Installation
 
-Context-aware question answering
-Report-specific queries
-Concise, accurate responses
-User-friendly chat interface
+### Prerequisites
+- Python 3.8 or higher
+- Groq API key ([Get one here](https://console.groq.com/))
+- pip package manager
 
-🎨 User Interface
-
-Modern, responsive design
-Three-column layout for optimal workflow
-Real-time processing indicators
-Professional aviation-themed styling
-
-
-🚀 Installation
-Prerequisites
-
-Python 3.8 or higher
-Groq API key (Get one here)
-pip package manager
-
-Step 1: Clone the Repository
-bashgit clone https://github.com/yourusername/black-box-archive-analysis.git
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/yourusername/black-box-archive-analysis.git
 cd black-box-archive-analysis
-Step 2: Create Virtual Environment (Recommended)
-bash# Windows
+```
+
+### Step 2: Create Virtual Environment (Recommended)
+```bash
+# Windows
 python -m venv venv
 venv\Scripts\activate
 
 # macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
-Step 3: Install Dependencies
-bashpip install -r requirements.txt
-Step 4: Configure Environment Variables
-Create a .env file in the project root:
-bashGROQ_API_KEY=your_groq_api_key_here
+```
 
-📦 Dependencies
-txtstreamlit>=1.28.0
+### Step 3: Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Step 4: Configure Environment Variables
+Create a `.env` file in the project root:
+```bash
+GROQ_API_KEY=your_groq_api_key_here
+```
+
+## 📦 Dependencies
+```
+streamlit>=1.28.0
 openai>=1.0.0
 python-dotenv>=1.0.0
 pydub>=0.25.1
 python-docx>=1.0.0
+```
 
-💻 Usage
-Starting the Application
-bashstreamlit run app.py
+---
+
+## 💻 Usage
+
+### Starting the Application
+```bash
+streamlit run app.py
 ```
 
 The application will open in your default web browser at `http://localhost:8501`
@@ -108,7 +130,6 @@ The application will open in your default web browser at `http://localhost:8501`
    - Save the professional document for official use
 
 ### Example Questions for the Assistant
-
 - "What was the primary incident type?"
 - "List all safety recommendations"
 - "What aircraft was involved?"
@@ -120,18 +141,14 @@ The application will open in your default web browser at `http://localhost:8501`
 ## ⚙️ Configuration
 
 ### Rate Limiting
-
 The application includes intelligent rate limiting to manage API usage:
-
 - Tracks token usage per minute
 - Automatic retry with exponential backoff
 - Jitter for distributed requests
 - User-friendly wait notifications
 
 ### Customization
-
 Edit `app.py` to customize:
-
 - **Model Selection**: Change `llama-3.1-8b-instant` to other Groq models
 - **Max Tokens**: Adjust `max_tokens` parameter for longer/shorter responses
 - **Temperature**: Modify for more creative or deterministic outputs
@@ -149,72 +166,81 @@ black-box-archive-analysis/
 ├── README.md             # This file
 │
 └── uploaded_file.mp3     # Temporary file (auto-generated)
+```
 
-🔒 Security Notes
+---
 
-Never commit your .env file to version control
-Keep your Groq API key confidential
-The application processes files locally for privacy
-No audio data is stored permanently
+## 🔒 Security Notes
+- Never commit your `.env` file to version control
+- Keep your Groq API key confidential
+- The application processes files locally for privacy
+- No audio data is stored permanently
 
+---
 
-🛠️ Troubleshooting
-Common Issues
-Issue: GROQ_API_KEY not found
+## 🛠️ Troubleshooting
 
-Solution: Ensure .env file exists with correct API key
+### Common Issues
 
-Issue: Rate limit errors
+**Issue**: GROQ_API_KEY not found  
+**Solution**: Ensure `.env` file exists with correct API key
 
-Solution: Wait 60 seconds; the app handles this automatically
+**Issue**: Rate limit errors  
+**Solution**: Wait 60 seconds; the app handles this automatically
 
-Issue: Non-aviation content detected
+**Issue**: Non-aviation content detected  
+**Solution**: Ensure audio contains flight/ATC communications
 
-Solution: Ensure audio contains flight/ATC communications
+**Issue**: Transcription errors  
+**Solution**: Check audio quality and format (MP3 required)
 
-Issue: Transcription errors
+---
 
-Solution: Check audio quality and format (MP3 required)
-
-
-🤝 Contributing
+## 🤝 Contributing
 Contributions are welcome! Please follow these steps:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Fork the repository
-Create a feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
+---
 
-
-📝 License
+## 📝 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-🙏 Acknowledgments
+---
 
-Groq for providing powerful AI models
-Streamlit for the excellent web framework
-OpenAI for the API interface standards
-Aviation safety professionals who inspired this project
+## 🙏 Acknowledgments
+- Groq for providing powerful AI models
+- Streamlit for the excellent web framework
+- OpenAI for the API interface standards
+- Aviation safety professionals who inspired this project
 
+---
 
-📧 Contact
+## 📧 Contact
 For questions, suggestions, or support:
+- GitHub Issues: Create an issue
+- Email: your.email@example.com
 
-GitHub Issues: Create an issue
-Email: your.email@example.com
+---
 
+## 🔮 Future Enhancements
+- Support for additional audio formats (WAV, M4A)
+- Multi-language transcription support
+- Batch processing for multiple files
+- Advanced analytics and visualization
+- Database integration for historical analysis
+- PDF export option
+- Real-time audio streaming analysis
 
-🔮 Future Enhancements
+---
 
- Support for additional audio formats (WAV, M4A)
- Multi-language transcription support
- Batch processing for multiple files
- Advanced analytics and visualization
- Database integration for historical analysis
- PDF export option
- Real-time audio streaming analysis
+<div align="center">
 
+**Made with ❤️ for Aviation Safety**
 
-Made with ❤️ for Aviation Safety
 ⭐ Star this repository if you find it helpful!
+
+</div>
